@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calorías</title>
+</head>
+<body class="container">
+
+    <div class="row">
+        <div class="col"><h2 class="my-2">Ingreso de datos</h2></div>
+        <div class="col-12">
+            <h5 class="alert-heading">Instrucciones</h5>
+            <div class="alert alert-secondary" role="alert">
+                <h5>¿Qué es la estimación de calorías quemadas en ejercicio?</h5>
+                <p>Es un cálculo que nos permite estimar cuántas calorías quema una persona al realizar actividad física, en este caso, caminar o correr.</p>
+                <hr />
+                <p>
+                    <h5>¿Para qué sirve?</h5>
+                    <ul>
+                        <li>Es útil para planificar rutinas de ejercicio y dietas.</li>
+                        <li>Permite comparar la intensidad de diferentes actividades.</li>
+                        <li>Si el IMC se encuentra sobre 30, se considera "obesidad".</li>
+                    </ul>
+                </p>
+                <hr />
+                <p>Cómo se aplica: Usaremos una fórmula simplificada:</p>
+                <p>Calorías = MET * 3.5 * peso (kg) * (tiempo en minutos / 200)</p>
+                <h5>Donde:</h5>
+                <ul>
+                    <li>MET (Metabolic Equivalent of Task) es una medida de intensidad.</li>
+                    <li>3.5 es una constante relacionada con el consumo de oxígeno en reposo.</li>
+                    <li>Tiempo es la duración del ejercicio en minutos.</li>
+                </ul>
+                <p>Ejemplo práctico: Una persona de 70 kg camina durante 30 minutos.</p>
+                <p>Calorías = 3.5 * 3.5 * 70 * (30 / 200) = 128.63 calorías</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <form id="formulario-calorias">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="Peso" class="form-label">Peso (Kg)</label>
+                    <input type="num" class="form-control" id="Peso" placeholder="Ej: 65" required>
+                    <div class="invalid-feedback" id="weight-feedback">El peso debe estar entre 1 y 120 kg.</div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="min" class="form-label">Minutos a ejercitar</label>
+                    <input type="num" class="form-control" id="min" placeholder="Ej: 30" required>
+                    <div class="invalid-feedback" id="minutes-feedback">Los minutos deben estar entre 5 y 150.</div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="mb-3">
+                    <label class="form-label">Actividad</label>
+                    <div>
+                        <input type="radio" id="Caminar" name="act" value="Caminar" checked>
+                        <label for="Caminar">Caminar</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Correr" name="act" value="Correr">
+                        <label for="Correr">Correr</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Calcular calorías</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div id="result-alert"></div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
